@@ -54,8 +54,9 @@ rstrip = Data.Text.unpack . Data.Text.stripEnd . Data.Text.pack
 
 main :: IO()
 main = do
-    stdout <- getEnv "OUTPUT_PATH"
-    fptr <- openFile stdout WriteMode
+    -- some lines were commented to run outside of hakerrank
+    --stdout <- getEnv "OUTPUT_PATH"
+    --fptr <- openFile stdout WriteMode
 
     aTemp <- getLine
 
@@ -67,7 +68,8 @@ main = do
 
     let result = compareTriplets a b
 
-    hPutStrLn fptr $ Data.List.intercalate " " $ Data.List.map (\x -> show x) $ result
+    putStrLn $ show result -- added to run outside of hackerrank
+    --hPutStrLn fptr $ Data.List.intercalate " " $ Data.List.map (\x -> show x) $ result
 
-    hFlush fptr
-    hClose fptr
+    --hFlush fptr
+    --hClose fptr

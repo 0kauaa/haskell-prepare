@@ -44,8 +44,9 @@ readMultipleLinesAsStringArray n = do
 
 main :: IO()
 main = do
-    stdout <- getEnv "OUTPUT_PATH"
-    fptr <- openFile stdout WriteMode
+    -- some lines were commented to run outside of hakerrank
+    --stdout <- getEnv "OUTPUT_PATH"
+    --fptr <- openFile stdout WriteMode
 
     nTemp <- getLine
     let n = read $ lstrip $ rstrip nTemp :: Int
@@ -55,7 +56,8 @@ main = do
 
     let result = diagonalDifference arr
 
-    hPutStrLn fptr $ show result
+    putStrLn $ show result -- added to run outside of hackerrank
+    --hPutStrLn fptr $ show result
 
-    hFlush fptr
-    hClose fptr
+    --hFlush fptr
+    --hClose fptr

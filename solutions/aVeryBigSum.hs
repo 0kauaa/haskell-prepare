@@ -30,8 +30,8 @@ rstrip = Data.Text.unpack . Data.Text.stripEnd . Data.Text.pack
 
 main :: IO()
 main = do
-    stdout <- getEnv "OUTPUT_PATH"
-    fptr <- openFile stdout WriteMode
+    --stdout <- getEnv "OUTPUT_PATH"
+    --fptr <- openFile stdout WriteMode
 
     arCountTemp <- getLine
     let arCount = read $ lstrip $ rstrip arCountTemp :: Int
@@ -42,7 +42,8 @@ main = do
 
     let result = aVeryBigSum ar
 
-    hPutStrLn fptr $ show result
+    putStrLn $ show result -- added to run outside of hackerrank
+    --hPutStrLn fptr $ show result
 
-    hFlush fptr
-    hClose fptr
+    --hFlush fptr
+    --hClose fptr
