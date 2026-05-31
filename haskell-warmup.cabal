@@ -74,6 +74,10 @@ executable birthdayCakeCandles
    import: hackerRankDeps
    main-is: birthdayCakeCandles.hs
 
+executable timeConversion
+   import: hackerRankDeps
+   main-is: timeConversion.hs
+
 -- new ones
 -- executable filename
 --    import: hackerRankDeps
