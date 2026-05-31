@@ -66,6 +66,11 @@ executable staircase
     import: hackerRankDeps
     main-is: staircase.hs
 
+
+executable miniMaxSum
+   import: hackerRankDeps
+   main-is: miniMaxSum.hs
+
 -- new ones
 -- executable filename
 --    import: hackerRankDeps
