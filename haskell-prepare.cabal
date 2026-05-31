@@ -1,8 +1,8 @@
 cabal-version:      3.0
-name:               haskell-warmup
+name:               haskell-prepare
 version:            0.1.0.0
-description:        HackerRank warmup solutions in Haskell
-homepage:           https://github.com/0kauaa/haskell-warmup
+description:        HackerRank prepare solutions in Haskell
+homepage:           https://github.com/0kauaa/haskell-prepare
 license:            MIT
 license-file:       LICENSE
 author:             Kauã Santana
@@ -12,73 +12,80 @@ build-type:         Simple
 common warnings
     ghc-options:
         -Wall
-        -Wno-unused-imports 
-        -Wno-missing-signatures 
+        -Wno-unused-imports
+        -Wno-missing-signatures
         -Wno-unused-top-binds
         -Wno-name-shadowing
 
 common hackerRankDeps
     import: warnings
-
-    hs-source-dirs:
-        solutions
-
     default-language:
         Haskell2010
-
     build-depends:
         base ^>=4.18.3.0,
         array,
         split,
         text,
         containers
-
     default-extensions:
         DuplicateRecordFields
         FlexibleInstances
         UndecidableInstances
 
-executable solveMeFirst
+-- warmup trail
+common warmup
     import: hackerRankDeps
+    hs-source-dirs:
+        trails/warmup
+
+-- implementation trail
+common implementation
+    import: hackerRankDeps
+    hs-source-dirs:
+        trails/implementation
+
+-- Warmup
+executable solveMeFirst
+    import: warmup
     main-is: solveMeFirst.hs
 
 executable simpleArraySum
-    import: hackerRankDeps
+    import: warmup
     main-is: simpleArraySum.hs
 
 executable compareTriplets
-    import: hackerRankDeps
+    import: warmup
     main-is: compareTriplets.hs
 
 executable aVeryBigSum
-    import: hackerRankDeps
+    import: warmup
     main-is: aVeryBigSum.hs
 
 executable diagonalDifference
-    import: hackerRankDeps
+    import: warmup
     main-is: diagonalDifference.hs
 
 executable plusMinus
-    import: hackerRankDeps
+    import: warmup
     main-is: plusMinus.hs
 
 executable staircase
-    import: hackerRankDeps
+    import: warmup
     main-is: staircase.hs
 
 executable miniMaxSum
-   import: hackerRankDeps
-   main-is: miniMaxSum.hs
+    import: warmup
+    main-is: miniMaxSum.hs
 
 executable birthdayCakeCandles
-   import: hackerRankDeps
-   main-is: birthdayCakeCandles.hs
+    import: warmup
+    main-is: birthdayCakeCandles.hs
 
 executable timeConversion
-   import: hackerRankDeps
-   main-is: timeConversion.hs
+    import: warmup
+    main-is: timeConversion.hs
 
 -- new ones
 -- executable filename
---    import: hackerRankDeps
---    main-is: filename.hs
+--     import: trail
+--     main-is: filename.hs
